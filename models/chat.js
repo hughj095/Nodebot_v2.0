@@ -12,6 +12,7 @@ mongoose.connect(dbConnectionURL)
 
 // Define chat schema
 const chatSchema = new mongoose.Schema({
+    username: String,
     user: String,
     system: String,
 });
