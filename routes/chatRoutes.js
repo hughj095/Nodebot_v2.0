@@ -42,8 +42,8 @@ router.post("/api/chat", async (req, res) => {
 
         const chatResponse = response.data.choices[0].message.content.trim();
         chatHistory.push({ role: "system", content: chatResponse });
-
-        const chatLog = new Chat({ username: "demo", user: userMessage, system: chatResponse });
+// update here with datetime function or UUI 
+        const chatLog = new Chat({ username: Date.now() || "JOHN", user: userMessage, system: chatResponse });
 
         try {
             await chatLog.save();
